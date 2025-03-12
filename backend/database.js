@@ -7,13 +7,13 @@ const DB = new sql3.Database(
   connected
 );
 
-const connected = (err) => {
+function connected(err) {
   if (err) {
     console.log(err.message);
     return;
   }
   console.log("created DB, or it already exists");
-};
+}
 
 let sql = `CREATE TABLE IF NOT EXISTS users(
     username TEXT PRIMARY KEY,
