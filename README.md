@@ -1,32 +1,64 @@
-Project Setup:
-  Clone the repository: git clone [<repository-url>](https://github.com/vipinreddy1/sampleWebApp)
-Install dependencies:
-  For backend: cd backend && npm install
-  For frontend: cd frontend && npm install
-Set up the database (if applicable):
-  the database used is sqllite, I have already created the database but in case there is need to seed the data again, just navigate to localhost:10000/createdata.
-  The data is stored in a file called sampledata.db, if there is any issue one can delete the data in this and seed the data again.
-  
-Run the application:
-For backend:
-  1.cd backend
-  2. node index.js
-For frontend: 
-1.cd frontend 
-2.npm start
-Access the application at http://localhost:3000, backend api can be accessed at localhost:10000.
-Authentication Details:
-username - mike
-password - longpassword
+# Sample Web Application
 
-Features:
-I have implemented authentication and search functionality for products. There is also a login page which will send the JWT to the user.
-Without the JWT it should redirect to the login page after throwing an alert.
-Passwords are stored in plaintext in the DB, this is an insecure practice but for the sake of simplicity I have not hashed the passwords.
-APIs: 
-/products : has authentication and search functionalities
-/login: user can login with the above authentication details to access the other parts of the website
-/products:id gets just one product with id, which is the unique key in this case
+This repository is a sample web application with a backend API and a frontend user interface. Below are the instructions for setting up and running the project.
 
+## Project Setup
+
+### Clone the Repository:
+`git clone https://github.com/vipinreddy1/sampleWebApp`
+
+### Install Dependencies:
+1. **For Backend**:
+`cd backend && npm install`
+2. **For Frontend**:
+`cd frontend && npm install`
+
+### Set Up the Database:
+- The application uses **SQLite**.
+- A pre-configured database file, `sampledata.db`, is included.
+- If you need to seed the data again:
+  - Navigate to: [http://localhost:10000/createdata](http://localhost:10000/createdata).
+- If there are any issues, delete the `sampledata.db` file and reseed the data using the above endpoint.
+
+## Run the Application
+
+### Backend:
+`cd backend`  
+`node index.js`
+
+### Frontend:
+`cd frontend`  
+`npm start`
+
+### Access the Application:
+- Frontend: [http://localhost:3000](http://localhost:3000)
+- Backend API: [http://localhost:10000](http://localhost:10000)
+
+## Authentication Details
+- **Username**: `mike`
+- **Password**: `longpassword`
+
+> **Note**: Passwords are stored in plaintext in the database for simplicity. This is **insecure** and should be avoided in production.
+
+## Features
+
+### Authentication:
+- Login functionality is implemented.
+- A **JWT** is provided upon successful login.
+- **Authorization**: Without a valid JWT, users will be redirected to the login page with an alert.
+
+### Product Search:
+- Search functionality for products is available via the `/products` API.
+
+### APIs:
+1. **`/products`**: 
+   - Features authentication and search functionalities.
+2. **`/products/:id`**: 
+   - Fetches details for a single product by its unique `id`. Authentication is included
+3. **`/login`**: 
+   - Allows user login and returns a JWT for authenticated access.
+
+## Security Notice
+- Passwords are stored in plaintext in the database. I have not added hashing for the sake of simplicity, if this was a production database it would be a crucial issue.
 
 
